@@ -1,0 +1,21 @@
+{
+  "name": "TestingAngularJS",
+  "version": "1.0.0",
+  "description": "Projeto do curso Udemy Unit Testing Angular ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "udemy",
+    "angular",
+    "test",
+    "karma",
+    "jasmine"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.7.7"
+  }
+}
