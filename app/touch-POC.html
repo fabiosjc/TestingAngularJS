@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html ng-app="taskManagerApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>POC - Gerenciador de Tarefas</title>
+
+    <!-- CSS-->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/stock-task-manager.css" rel="stylesheet">
+
+    <!-- JS -->
+    <script src="bower_components/angular/angular.js" ></script>
+    <script src="bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js"></script>  
+    <script src="js/task-manager.js" ></script>
+</head>
+  
+<body ng-controller="taskManagerCtrl">
+    <!-- Área principal -->  
+    <div class="task-manager-stage container">
+        <!--  Título -->
+        <div class="task-header row">
+            <h1 class="task-list-title">Tarefas <span class="count">({{tasks.length}})</span></h1>
+            <div class="task-filter small">
+                <fieldset><label>Filtrar: </label>
+                    <input type="text" placeholder="Zona" />
+                    <input type="text" placeholder="Prioridade"/>
+                    <input type="text" placeholder="Coletor"/>                    
+                </fieldset>
+            </div>
+        </div>
+        
+        <!-- Área com a lista de tarefas -->
+        <div class="row">
+            <!-- Legenda --> 
+            <div class="task-list col-md-2">
+                <div class="legend">
+                <head><h2>Legenda</h2></head>
+                    <ul>
+                      <li>                    
+                          <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true" />           
+    Picking</li>
+                      <li>
+                          <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true" />           
+    Ressuprimento</li>
+                    </ul>
+                </div>
+                
+                <!-- Tarefas Pendentes -->         
+                <div class="task-list" dnd-list="tasks">                    
+                    <div ng-repeat="task in tasks" class="task picking"
+                         dnd-draggable="task"
+                         dnd-moved="tasks.splice($index, 1)"
+                         dnd-effect-allowed="move"
+                         dnd-selected="selected = task"
+                         ng-class="{'selected': selected === task}"
+                         >                        
+                        <div class="icon">
+                            <span class="glyphicon taskbar"></span>
+                        </div>                            
+                        <span class="description">{{task.shortDescription}}</span>       
+                    </div>                                                            
+                </div>            
+            </div>
+            
+            <!-- Área de atribuição das tarefas -->
+            <div class="dropzone col-md-10" >
+                <div class="container-fluid">
+                    <div class="row">                    
+                        <!-- Coletores -->
+                        <div ng-repeat="device in devices" >
+                            <div class="task-box col-md-3">
+                                <div class="task-box-header">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true" ></span>         
+                                    <span class="device-label">{{device.user}}</span>                                 
+                                    <span ng-if="device.tasks.length > 0" class="count" style="float: right; margin-right: 5px;">
+                                        <small>({{device.tasks.length}})</small>
+                                    </span>
+                                </div>
+                                <div class="task-box-body" dnd-list="devices[$index].tasks">   
+                                    <div ng-repeat="task in device.tasks"                                         
+                                         class="task picking" 
+                                         dnd-draggable="task"
+                                         dnd-moved="device.tasks.splice($index, 1)"
+                                         dnd-effect-allowed="move"
+                                         dnd-selected="selected = task"
+                                         ng-class="{'selected': selected === task}"
+                                         >                        
+                                        <div class="icon">
+                                            <span class="glyphicon taskbar"></span>
+                                        </div>                            
+                                        <span class="description">{{task.shortDescription}}</span>       
+                                    </div> 
+                                </div>                        
+                            </div>
+                        </div>
+
+                        <div class="task-box col-md-3 ">
+                            <div class="task-box-header">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true" ></span>         
+                                <span class="device-label">Coletor 1</span>
+                            </div>
+                            <div class="task-box-body" >  
+                                <div class="task ressuply">
+                                    <span class="glyphicon glyphicon-ok" aria-hidden="true" ></span>           
+                                    PIC: TP-0006-Z1
+                                </div>
+                                <div class="task ressuply">
+                                    <span class="glyphicon taskbar" aria-hidden="true" ></span>           
+                                    PIC: TP-0009-Z1
+                                </div>                            
+                            </div>
+                        </div>
+
+                        <div class="task-box col-md-3">
+                            <div class="task-box-header">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true" ></span>         
+                                <span class="device-label">Coletor 2</span>
+                            </div>
+                            <div class="task-box-body" >                        
+                            </div>
+                        </div>                         
+                    </div>                
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container" style="margin-top: 50px">   
+        <div class="row">
+            <div class="col-md-6">
+                <pre class="code">{{devicesAsJson}}</pre>
+            </div>
+            <div class="col-md-6">        
+                <pre class="code">{{tasksAsJson}}</pre>                    
+            </div>    
+        </div>
+    </div>    
+  </body>
+</html>
