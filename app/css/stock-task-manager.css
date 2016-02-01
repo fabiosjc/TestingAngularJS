@@ -1,0 +1,128 @@
+/* Área principal */
+.task-manager-stage {
+    background: #f8f8f8;    
+}
+
+/* Título (Tarefas) */
+.task-header {
+    border-bottom: 1px solid #fff;    
+}
+
+.task-header .task-list-title {
+    font-size: 15px;
+    margin: 0;
+    padding: 10px 0px 10px 10px;
+    display: inline-block;
+    width: 200px;    
+}
+
+.task-header .task-filter{
+    display: inline-block;
+} 
+
+.task-header .task-filter fieldset{
+    display: inline;
+}
+
+.task-header .task-filter fieldset input{
+    margin: 0 5px;
+    padding: 2px 5px;
+    border: 1px solid #eee;
+}
+
+/* Área das listas de tarefas */
+.task-list.col-md-2 {
+    border-right: 1px solid white;
+    padding: 0;
+}
+
+.task-list h2{    
+    font-size: 13px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px;
+    color: gray
+}
+
+.task-list-priority {
+    margin-bottom: 100px;
+}
+
+.task-list-normal {
+    border-top: 1px solid white;
+}
+
+/* Legenda */
+.legend {
+    display: none;
+}
+
+.legend ul {    
+    padding: 0;    
+    list-style: none;
+}
+
+.legend li {
+    margin:  0;
+    padding: 4px;
+}
+
+/* Tarefas */
+.task {
+    background: #fff;
+    height: 25px; 
+    line-height: 25px;    
+    /*border: 1px solid;  border-color: #fff #eee #eee #fff;*/
+}
+
+.task-list .task {
+    margin: 2px 1px; 
+}
+
+.task .taskbar {
+    width: 16px; height: 16px;
+    background: url('../images/barras.png') center center no-repeat; 
+    vertical-align: text-top;
+    margin-left: 3px;
+    cursor: move;
+}
+
+.task .glyphicon {
+    padding-left: 5px;
+    color: lightgrey;
+}                                                               
+
+
+/*Área de atribuição das tarefas */
+.dropzone.col-md-10 {  
+    background-color: #f6f6f6;    
+}
+
+.dropzone .task {
+
+}
+
+.task-box {
+    background: #fff;
+    margin: 8px 2px;
+    padding-right: 0px;
+    padding-left: 0px;
+    max-width: 220px; 
+}
+
+.task-box-header {
+    line-height: 30px;
+    height: 30px;
+    border-bottom: 1px solid #eee;
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+.task-box-body {
+    min-height: 80px; 
+    padding: 5px;
+}
+
+.glyphicon.glyphicon-ok {
+    color: cornflowerblue;
+}
