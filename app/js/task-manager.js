@@ -3,7 +3,8 @@ var taskManagerApp = angular.module("taskManagerApp", ['dndLists']);
 taskManagerApp.controller("taskManagerCtrl", function ($rootScope, $scope) {   
     $scope.devices = [
         {"user": "joao","tasks": []},
-        {"user": "maria","tasks": []}
+        {"user": "maria","tasks": []},
+        {"user": "josé","tasks": []}
      ];
     
     $scope.tasks = [

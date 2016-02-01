@@ -4,10 +4,20 @@
     font-size: 13px;
 }
 
+span.glyphicon.glyphicon-user {
+    color: cadetblue;
+}
+
+.glyphicon.glyphicon-ok {
+    color: cornflowerblue;
+    padding-right: 3px;
+}
+
+
 
 /* Área principal */
 .task-manager-stage {
-    background: #f5f5f5;    
+    background: #f5f5f5;       
 }
 
 /* Título (Tarefas) */
@@ -20,7 +30,7 @@
     margin: 0;
     padding: 10px 0px 10px 10px;
     display: inline-block;
-    width: 200px;    
+    width: 210px;    
 }
 
 .task-header .task-filter{
@@ -38,6 +48,11 @@
 }
 
 /* Área das listas de tarefas */
+.task-list {
+    min-height: 400px;
+    /*background-color: rgba(181, 192, 195, 0.08);*/
+}
+
 .task-list.col-md-2 {
     border-right: 1px solid white;
     padding: 0;
@@ -103,13 +118,7 @@
     font-size: 11px;        
     padding-left: 1px;
     text-transform: uppercase;
-}
-
-.task .glyphicon {
-    padding-left: 5px;
-    color: lightgrey;
-}                                                               
-
+}                                                    
 
 /*Área de atribuição das tarefas */
 .dropzone {  
@@ -125,13 +134,17 @@
     margin-top: 0;
 }
 
+.device-label{
+    text-transform: capitalize;
+}
+
 
 .task-box {
     background: #fff;
     margin: 8px 2px;
     padding-right: 0px;
     padding-left: 0px;
-    max-width: 220px; 
+    max-width: 200px; 
 }
 
 .task-box-header {
@@ -145,12 +158,8 @@
 .task-box-body {
     min-height: 80px; 
     padding: 5px;
+    padding-bottom: 10px;    
 }
-
-.glyphicon.glyphicon-ok {
-    color: cornflowerblue;
-}
-
 
 /* Drag and Drop*/
 
