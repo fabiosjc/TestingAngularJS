@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="demoApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DND - Simples</title>
+        
+        <!-- CSS-->
+        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/stock-task-manager.css" rel="stylesheet">
+        
+        <!-- JS -->
+        <script src="bower_components/angular/angular.js" ></script>
+        <script src="bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js"></script>      
+        <script src="js/simple.js" ></script>        
+  </head>
+  <body ng-controller="SimpleDemoCtrl">
+      
+    <div class="container">      
+        <div class="simpleDemo row">
+            <div class="col-md-8">
+                <div class="row">
+                <div ng-repeat="(listName, list) in models.lists" class="col-md-6"> 
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">List {{listName}}</h3>
+                            </div>       
+                             <div class="panel-body">
+                                <ul dnd-list="list">
+                                    <!-- The dnd-draggable directive makes an element draggable and will
+                                         transfer the object that was assigned to it. If an element was
+                                         dragged away, you have to remove it from the original list
+                                         yourself using the dnd-moved attribute -->
+                                    <li ng-repeat="item in list"
+                                        dnd-draggable="item"
+                                        dnd-moved="list.splice($index, 1)"
+                                        dnd-effect-allowed="move"
+                                        dnd-selected="models.selected = item"
+                                        ng-class="{'selected': models.selected === item}"
+                                        >
+                                        {{item.label}}
+                                    </li>
+                                 </ul >                 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div view-source="simple"></div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Generated Model</h3>
+                    </div>
+                    <div class="panel-body">
+                        <pre class="code">{{modelAsJson}}</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>     
+  </body>
+</html>

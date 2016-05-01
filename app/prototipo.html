@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>POC - Gerenciador de Tarefas</title>
+    <!-- Bootstrap -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/stock-task-manager.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Área principal -->  
+    <div class="task-manager-stage container">
+        <!--  Título -->
+        <div class="task-header  row">
+            <h1 class="task-list-title">Tarefas <small>(12)</small></h1>
+            <div class="task-filter small">
+                <fieldset><label>Filtrar: </label>
+                    <input type="text" placeholder="Zona" />
+                    <input type="text" placeholder="Prioridade"/>
+                    <input type="text" placeholder="Coletor"/>                    
+                </fieldset>
+
+            </div>
+        </div>
+        
+        <!-- Área com a lista de tarefas -->
+        <div class="row">
+            <!-- Legenda --> 
+            <div class="task-list col-md-2">
+                <div class="legend">
+                <head><h2>Legenda</h2></head>
+                    <ul>
+                      <li>                    
+                          <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true" />           
+    Picking</li>
+                      <li>
+                          <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true" />           
+    Ressuprimento</li>
+                    </ul>
+                </div>
+                
+                <!-- Tarefas Pendentes -->         
+                <div class="task-list">
+                    <div class="task-list-priority">
+                        <head><h2>Prioritárias</h2></head>
+                        <div draggable="true" class="task picking">
+    <!--                        <span class="glyphicon glyphicon-option-vertical" aria-hidden="true" ></span>           -->
+                            <span class="glyphicon taskbar"></span>
+                            <span>PIC: TP-0001-Z1</span>
+                        </div>
+                        <div draggable="true" class="task picking">
+                            <span class="glyphicon taskbar" aria-hidden="true" ></span>           
+                            <span>PIC: TP-0002-Z1</span>
+                        </div>
+                        <div draggable="true" class="task ressuply">
+                            <span class="glyphicon taskbar" aria-hidden="true" ></span>           
+                            <span>RES: TP-0001-Z1</span>
+                        </div>
+                        <div draggable="true" class="task picking">
+                            <span class="glyphicon taskbar" aria-hidden="true" ></span>          
+                            PIC: TP-0001-Z1
+                        </div>
+                    </div>
+                    
+                    <div class="task-list-normal">
+                        <head><h2 class="normal">Normal</h2></head>
+                        <div class="task picking">
+                            <span class="glyphicon taskbar" aria-hidden="true" ></span>           
+                            PIC: TP-0006-Z1
+                        </div>
+                        <div class="task picking">
+                            <span class="glyphicon taskbar" aria-hidden="true" ></span>           
+                            PIC: TP-0004-Z1 
+                        </div>
+                        <div class="task ressuply">
+                            <span class="glyphicon taskbar" aria-hidden="true" ></span>           
+                            RES: TP-0002-Z1
+                        </div>
+                    </div>
+                </div>            
+            </div>
+            
+            <!-- Área de atribuição das tarefas -->
+            <div class="dropzone col-md-10" >
+                <div class="container-fluid">
+                <div class="row">
+                    <div class="task-box col-md-3">
+                        <div class="task-box-header">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true" ></span>         
+                            <span class="device-label">Coletor 1</span>
+                        </div>
+                        <div class="task-box-body" >  
+                            <div class="task ressuply">
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true" ></span>           
+                                PIC: TP-0006-Z1
+                            </div>
+                            <div class="task ressuply">
+                                <span class="glyphicon taskbar" aria-hidden="true" ></span>           
+                                PIC: TP-0009-Z1
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="task-box col-md-3">
+                        <div class="task-box-header">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true" ></span>         
+                            <span class="device-label">Coletor 2</span>
+                        </div>
+                        <div class="task-box-body" >                        
+                        </div>
+                    </div>                                                    
+                
+                    <div class="task-box col-md-3">
+                        <div class="task-box-header">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true" ></span>         
+                            <span class="device-label">Coletor 3</span>
+                        </div>
+                        <div class="task-box-body" >                        
+                        </div>
+                    </div>
+
+                    <div class="task-box col-md-3">
+                        <div class="task-box-header">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true" ></span>         
+                            <span class="device-label">Coletor 4</span>
+                        </div>
+                        <div class="task-box-body" >                        
+                        </div>
+                    </div>
+                    <div class="task-box col-md-3">
+                        <div class="task-box-header">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true" ></span>         
+                            <span class="device-label">Coletor 5</span>
+                        </div>
+                        <div class="task-box-body" >                        
+                        </div>
+                    </div>     
+
+                    <div class="task-box col-md-3">
+                        <div class="task-box-header">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true" ></span>         
+                            <span class="device-label">Coletor 6</span>
+                        </div>
+                        <div class="task-box-body" >                        
+                        </div>
+                    </div>  
+                    
+                    <div class="task-box col-md-3">
+                        <div class="task-box-header">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true" ></span>         
+                            <span class="device-label">Coletor 7/span>
+                        </div>
+                        <div class="task-box-body" >                        
+                        </div>
+                    </div>         
+                    
+                    <div class="task-box col-md-3">
+                        <div class="task-box-header">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true" ></span>         
+                            <span class="device-label">Coletor 8</span>
+                        </div>
+                        <div class="task-box-body" >                        
+                        </div>
+                    </div>         
+                    
+                    <div class="task-box col-md-3">
+                        <div class="task-box-header">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true" ></span>         
+                            <span class="device-label">Coletor 9</span>
+                        </div>
+                        <div class="task-box-body" >                        
+                        </div>
+                    </div>         
+                    
+                    <div class="task-box col-md-3">
+                        <div class="task-box-header">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true" ></span>         
+                            <span class="device-label">Coletor 10</span>
+                        </div>
+                        <div class="task-box-body" >                        
+                        </div>
+                    </div>         
+                    
+                    <div class="task-box col-md-3">
+                        <div class="task-box-header">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true" ></span>         
+                            <span class="device-label">Coletor 11</span>
+                        </div>
+                        <div class="task-box-body" >                        
+                        </div>
+                    </div>         
+                    
+                    <div class="task-box col-md-3">
+                        <div class="task-box-header">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true" ></span>         
+                            <span class="device-label">Coletor 12</span>
+                        </div>
+                        <div class="task-box-body" >                        
+                        </div>
+                    </div>         
+                    
+                    <div class="task-box col-md-3">
+                        <div class="task-box-header">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true" ></span>         
+                            <span class="device-label">Coletor 13</span>
+                        </div>
+                        <div class="task-box-body" >                        
+                        </div>
+                    </div>         
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
